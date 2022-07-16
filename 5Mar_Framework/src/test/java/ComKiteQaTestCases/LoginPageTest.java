@@ -31,13 +31,16 @@ public class LoginPageTest extends TestBase {
 		
 		loginpage = new LoginPage();
 		log.info("Loginpage object");
+		
+		
 	}
 	
 	 @Test(priority=2)
 	 public void HomePageTitleTest() throws InterruptedException {
 			String Title = loginpage.ValidateLoginPageTitle(props.getProperty("Username"), props.getProperty("Password"), props.getProperty("PIN"));
 			Assert.assertEquals(Title, "ite - Zerodha's fast and elegant flagship trading platform");
-		}
+			System.out.println("helllo world");
+	 }
 	 @Test(priority=3)
 	 public void KiteUserID() throws InterruptedException {
 		boolean UserID= loginpage.validateKiteloginUserID(props.getProperty("Username"), props.getProperty("Password"), props.getProperty("PIN"));
